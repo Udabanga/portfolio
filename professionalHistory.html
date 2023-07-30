@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Professional History</title>
+</head>
+
+<body>
+
+    <div class="parallax">
+        <nav class="navigation">
+            <div>
+                <a href="about.html">About Me</a>
+            </div>
+            <div>
+                <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+            </div>
+            <div>
+                <a class="active" href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+            </div>
+            <div>
+                <a href="testimonial.html">Testimonials</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Skills
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                    <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                </div>
+            </div>
+            <div>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <nav class="navigation-mobile">
+            <div id="menuToggle">
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <li>
+                        <div>
+                            <a href="about.html">About Me</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class="active" href="professionalHistory.html" style="display: flex;">Professional <br />
+                                History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="testimonial.html">Testimonials</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Skills
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                                <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <img src="img/logo-no-background.png" height="80" alt="Website Logo" class="website-logo">
+
+        <div class="page-card parallax-layer parallax-front">
+            <h1 class="page-card-heading" tabindex="0">Professional History</h1>
+
+            <div class="page-card-body">
+                <div class="timeline-container">
+                    <ul class="timeline">
+                        <li>
+                            <div class="card" tabindex="0">
+                                <div class="row">
+                                    <div class="timeline-logo">
+                                        <img src="img/Pearson-logo.png" alt="Pearson Logo" height="100">
+                                    </div>
+                                    <div class="timeline-info">
+                                        <div class="jobTitle">Associate Software Engineer</div>
+                                        <div class="company">Pearson</div>
+                                        <div class="location">Sri Lanka</div>
+                                        <div class="timestamp">2021 Sep - 2022 Sep</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <td style="vertical-align: top;"><strong>Skills: </strong></td>
+                                            <td>PostgreSQL · Java · Spring Boot · Amazon Web Services (AWS) · Linux</td>
+                                    </table>
+                                    <ul class="job-details">
+                                        <li>Migrated services from inhouse datacenters to AWS utilising EC2, ECS, RDS,
+                                            API Gateway, CloudWatch, AmazonMQ</li>
+                                        <li>Revised functions and procedures written for Oracle DB into PostgreSQL for
+                                            database migration and altered Java codebases to support new database change
+                                        </li>
+                                        <li>Transferred services hosted using WebLogic to Tomcat on AWS EC2 and created
+                                            shell scripts for Linux to automate build and deployment in CI/CD pipeline
+                                            on Gitlab </li>
+                                        <li>Wrote test cases for Java Spring boot applications to increase test coverage
+                                            to 80%</li>
+                                        <li>Developed and tested REST API and SOAP endpoints to resolve issues arising
+                                            after migration</li>
+                                        <li>Implemented new features and improved existing features for AWS
+                                            implementation</li>
+                                        <li>Troubleshooting ServiceNow incidents from production and pre-production
+                                            environments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card" tabindex="0">
+                                <div class="row">
+                                    <div class="timeline-logo">
+                                        <img src="img/DIMO-logo.png" alt="Pearson Logo" height="100">
+                                    </div>
+                                    <div class="timeline-info">
+                                        <div class="jobTitle">Software Engineer Intern</div>
+                                        <div class="company">DIMO</div>
+                                        <div class="location">Sri Lanka</div>
+                                        <div class="timestamp">2020 Mar - 2020 Oct</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <td style="vertical-align: top;"><strong>Skills: </strong></td>
+                                            <td>Express.js · React.js · Vue.js · Laravel · WordPress</td>
+                                    </table>
+                                    <ul class="job-details">
+                                        <li>Developed a CRM system for TATA Motors using Vue.js and Laravel PHP with
+                                            login and CRUD functionalities.</li>
+                                        <li>Developed and tested Customer Warranty web application for TATA Motors using
+                                            ReactJS and Ant Design</li>
+                                        <li>Designed and hosted a WordPress website for DIMO Academy using CSS for UI
+                                            elements and managed plugins</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Udayanga Jayamuthu Amarasena</h2>
+            <table class="contactTable" style="text-align: initial;" tabindex="0">
+                
+                <tbody>
+                    <tr>
+                        <td><img src="img/email_icon.svg" alt="Email Logo" height="20"></td>
+                        <td>udayangajayamuthu@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/linkedIn_icon.svg" alt="LinkedIn Logo" height="20"></td>
+                        <td>/in/udayangaamarasena/</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/github_icon.svg" alt="Github Logo" height="20"></td>
+                        <td>/Udabanga</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

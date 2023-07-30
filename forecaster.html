@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Forecaster</title>
+</head>
+
+<body>
+
+    <div class="parallax">
+        <nav class="navigation">
+            <div>
+                <a href="about.html">About Me</a>
+            </div>
+            <div>
+                <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+            </div>
+            <div>
+                <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+            </div>
+            <div>
+                <a href="testimonial.html">Testimonials</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Skills
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                    <a class="active" href="forecaster.html" style="text-align: center;">Forecaster</a>
+                </div>
+            </div>
+            <div>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <nav class="navigation-mobile">
+            <div id="menuToggle">
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <li>
+                        <div>
+                            <a href="about.html">About Me</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="testimonial.html">Testimonials</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Skills
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                                <a class="active" href="forecaster.html" style="text-align: center;">Forecaster</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <img src="img/logo-no-background.png" height="80" alt="Website Logo" class="website-logo">
+
+        <div class="page-card parallax-layer parallax-front">
+            <h1 class="page-card-heading" tabindex="0">Forecaster</h1>
+
+            <div class="page-card-body">
+                <div class="row">
+                    <canvas id="chart" height="600" width="1200"></canvas>
+                </div>
+                <div class="row">
+                    <button type="button" id="scrollleft">&lt;</button>
+                    <button type="button" id="scrollright">&gt;</button>
+                </div>
+            </div>
+            <div class="footer">
+                <h2>Udayanga Jayamuthu Amarasena</h2>
+                <table class="contactTable" style="text-align: initial;" tabindex="0">
+                    
+                    <tbody>
+                        <tr>
+                            <td><img src="img/email_icon.svg" alt="Email Logo" height="20"></td>
+                            <td>udayangajayamuthu@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/linkedIn_icon.svg" alt="LinkedIn Logo" height="20"></td>
+                            <td>/in/udayangaamarasena/</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/github_icon.svg" alt="Github Logo" height="20"></td>
+                            <td>/Udabanga</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let myChart = document.getElementById('chart').getContext('2d');
+
+        const btnScrollRight = document.getElementById('scrollright');
+        const btnScrollLeft = document.getElementById('scrollleft');
+        btnScrollRight.addEventListener("click", scrollRight);
+        btnScrollLeft.addEventListener("click", scrollLeft);
+
+        var dataLength = 0;
+        var dash;
+
+        function scrollRight() {
+            dataLength = demoChart.data.labels.length;
+            if (demoChart.config.options.scales.x.max >= dataLength - 1) {
+                alert("Error: End of data")
+            }
+            else {
+                demoChart.config.options.scales.x.min += 12;
+                demoChart.config.options.scales.x.max += 12;
+
+            }
+            demoChart.update();
+        }
+
+        function scrollLeft() {
+            if (demoChart.config.options.scales.x.min <= 0) {
+                demoChart.config.options.scales.x.min = 0;
+                alert("Error: Begining of data")
+                scales.x.max = 11;
+            }
+            else {
+                demoChart.config.options.scales.x.min -= 12;
+                demoChart.config.options.scales.x.max -= 12;
+            }
+            demoChart.update();
+        }
+
+
+        d3
+            .csv("forecast.csv")
+            .then(
+
+                function makeChart(record) {
+                    for (let i = 0; i < 12; i++) {
+                        // console.log(record[i]);
+                    }
+
+
+
+                    var yearLabels = record.map(function (d) {
+                        return d.Year;
+                    });
+                    var monthLabels = record.map(function (d) {
+                        return d.Month;
+                    });
+
+                    var yearMonthLabels = record.map(function (d) {
+                        return (d.Month + "|" + d.Year);
+                    });
+
+
+                    var solidFuelsData = record.map(function (d) {
+                        return +d.SolidFuels;
+                    });
+                    var gasData = record.map(function (d) {
+                        return +d.Gas;
+                    });
+                    var electricity = record.map(function (d) {
+                        return +d.Electricity;
+                    });
+                    var liquidFuels = record.map(function (d) {
+                        return +d.LiquidFuels;
+                    });
+
+                    var playerLabels = record.map(function (d) {
+                        return d.Name;
+                    });
+                    var weeksData = record.map(function (d) {
+                        return +d.Weeks;
+                    });
+                    const dash = (ctx, value) => {
+                        console.log(ctx);
+                        ctx.p0DataIndex < 30 ? [6, 6] : [6, 0] //320
+                    }
+
+
+                    demoChart = new Chart('chart', {
+                        type: "line",
+                        data: {
+                            labels: yearMonthLabels,
+                            datasets: [
+                                {
+                                    label: 'Solid Fuel',
+                                    data: solidFuelsData,
+                                    fill: false,
+                                    borderColor: 'rgb(204, 0, 0)',
+                                    // borderDash: [10,5]
+                                    segment: {
+                                        borderDash: ctx => dash(ctx, [6, 6]) || [6, 0]
+                                    }
+                                },
+                                {
+                                    label: 'Gas',
+                                    data: gasData,
+                                    fill: false,
+                                    borderColor: 'rgb(0, 204, 102)',
+                                },
+                                {
+                                    label: 'Electricity',
+                                    data: electricity,
+                                    fill: false,
+                                    borderColor: 'rgb(255, 255, 0)',
+                                },
+                                {
+                                    label: 'Liquid Fuel',
+                                    data: liquidFuels,
+                                    fill: false,
+                                    borderColor: 'rgb(0, 128, 255)',
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Prices £',
+                                        font: {
+                                            size: 15
+                                        }
+                                    },
+                                    min: 00,
+                                    max: 400
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Months',
+                                        font: {
+                                            size: 15
+                                        }
+                                    },
+                                    min: 00,
+                                    max: 11
+                                }
+                            },
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Price Comparison',
+                                    font: {
+                                        size: 25
+                                    }
+                                },
+                                legend: {
+                                    position: 'right'
+                                },
+                            }
+                        },
+                    });
+                }
+
+            )
+
+    </script>
+</body>
+
+</html>

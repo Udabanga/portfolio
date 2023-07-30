@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#434343"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="/img/icons/icon-192x192.png">
+    <script>navigator.serviceWorker.register("service-worker.js")</script>
+    <title>About</title>
+</head>
+
+<body>
+
+
+    <div class="parallax">
+        <nav class="navigation">
+            <div>
+                <a class="active" href="about.html" tabindex="0">About Me</a>
+            </div>
+            <div>
+                <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+            </div>
+            <div>
+                <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+            </div>
+            <div>
+                <a href="testimonial.html">Testimonials</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Skills
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                    <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                </div>
+            </div>
+            <div>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <nav class="navigation-mobile">
+            <div id="menuToggle">
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <li>
+                        <div>
+                            <a class="active" href="about.html">About Me</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="testimonial.html">Testimonials</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown" tabindex="0">
+                            <button tabindex="0" class="dropbtn">Skills
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a tabindex="0" href="currencyConverter.html" style="text-align: center;">Currency
+                                    Converter</a>
+                                <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <img src="img/logo-no-background.png" height="80" alt="Website Logo" class="website-logo">
+
+        <div class="page-background about-me-page-height parallax-back">
+            <div class="row">
+                <div class="column">
+                </div>
+                <div class="column">
+                    <h2 class="home-heading">Hello there, I am</h2>
+                    <h1 class="home-sub-heading">Udayanga <br> Jayamuthu <br> Amarasena</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-card parallax-front" style="height: max-content;">
+            <h1 class="page-card-heading" tabindex="0">About Me</h1>
+            <div class="page-card-body">
+                <div class="row profile-summary-row">
+                    <div class="column column-center">
+                        <img src="img/linkedInPicture.png" class="profile-picture" alt="Profile Picture" height="270">
+                    </div>
+                    <div class="column">
+                        <p>Software Engineer from Sri Lanka, based in the UK.</p>
+                        <p>I have about 3 years of experience in the industry with a diverse set of skills</p>
+                        <p>I am always eager to take on new challenges and learn new technologies, and I am confident
+                            that my skills and experience make me a valuable asset to any team.</p>
+                    </div>
+                </div>
+
+                <div class="row table-row">
+
+                    <table class="technicalTable">
+                        <tr>
+                            <th tabindex="0">Languages</th>
+                        </tr>
+                        <tr class="technicalTableImageRow">
+                            <td><img src="img/Java-logo.webp" alt="Java Logo" height="100"></td>
+                            <td><img src="img/Python-logo.webp" alt="Python Logo" height="100"></td>
+                            <td><img src="img/JavaScript-logo.webp" alt="Javascript Logo" height="100"></td>
+                            <td><img src="img/PHP-logo.webp" alt="PHP Logo" height="100"></td>
+                        </tr>
+                        <tr>
+                            <th tabindex="0">Front-End</th>
+                        </tr>
+                        <tr class="technicalTableImageRow">
+                            <td><img src="img/React-logo.webp" alt="React Logo" height="100"></td>
+                            <td><img src="img/VueJs-logo.webp" alt="VueJS Logo" height="100"></td>
+                        </tr>
+                        <tr>
+                            <th tabindex="0">Back-End</th>
+                        </tr>
+                        <tr class="technicalTableImageRow">
+                            <td><img src="img/Spring-logo.webp" alt="Spring Logo" height="100"></td>
+                            <td><img src="img/NodeJS-logo.webp" alt="VueJS Logo" height="100"></td>
+                            <td><img src="img/Laravel-logo.webp" alt="Laravel Logo" height="100"></td>
+                        </tr>
+                        <tr>
+                            <th tabindex="0">Cloud</th>
+                        </tr>
+                        <tr class="technicalTableImageRow">
+                            <td><img src="img/AWS-logo.webp" alt="AWS Logo" height="100"></td>
+                            <td><img src="img/Firebase-logo.webp" alt="Firebase Logo" height="100"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row history-row">
+                    <div class="column historyColumn">
+                        <a class="historyButton" href="/academicHistory.html">
+                            <img src="img/school.svg" alt="Academic History Icon">
+                            <p>View Academic History</p>
+                        </a>
+                    </div>
+                    <div class="column historyColumn">
+                        <a class="historyButton" href="professionalHistory.html">
+                            <img src="img/company.svg" alt="Work History Icon">
+                            <p>View Professional History</p>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Udayanga Jayamuthu Amarasena</h2>
+            <table class="contactTable" style="text-align: initial;" tabindex="0">
+                
+                <tbody>
+                    <tr>
+                        <td><img src="img/email_icon.svg" alt="Email Logo" height="20"></td>
+                        <td>udayangajayamuthu@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/linkedIn_icon.svg" alt="LinkedIn Logo" height="20"></td>
+                        <td>/in/udayangaamarasena/</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/github_icon.svg" alt="Github Logo" height="20"></td>
+                        <td>/Udabanga</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

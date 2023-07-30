@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+
+    <div class="parallax">
+        <nav class="navigation">
+            <div>
+                <a href="about.html">About Me</a>
+            </div>
+            <div>
+                <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+            </div>
+            <div>
+                <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+            </div>
+            <div>
+                <a href="testimonial.html">Testimonials</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Skills
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a class="active" href="currencyConverter.html" style="text-align: center;">Currency Converter</a>
+                    <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                </div>
+            </div>
+            <div>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <nav class="navigation-mobile">
+            <div id="menuToggle">
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <li>
+                        <div>
+                            <a href="about.html">About Me</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="academicHistory.html" style="display: flex;">Academic <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="professionalHistory.html" style="display: flex;">Professional <br /> History</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="testimonial.html">Testimonials</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Skills
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a class="active" href="currencyConverter.html" style="text-align: center;">Currency
+                                    Converter</a>
+                                <a href="forecaster.html" style="text-align: center;">Forecaster</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <img src="img/logo-no-background.png" height="80" alt="Website Logo" class="website-logo">
+
+        <div class="page-card parallax-layer parallax-front">
+            <h1 class="page-card-heading" tabindex="0">Currency Converter</h1>
+
+            <div class="page-card-body">
+                <div class="row">
+                    <div class="column">
+                        <form class="contact-form frConverter">
+                            <div>
+                                <div class="currency-fields">
+                                    <input type="hidden" name="default_base" value="usd" />
+                                    <input class="currency-input-left" type="text" name="base_value" value="1" data-min="0" oninput="this.value = 
+                                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+
+                                    <input class="currency-input-center" name="name">
+
+                                    <select class="currency-input-right" name="base_currency" onChange="frExCalc();">
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="currency-fields">
+                                    <input type="hidden" name="default_target" value="eur" />
+                                    <input class="currency-input-left" type="text" name="target_value" size="5"
+                                        value="" data-min="0" oninput="this.value = 
+                                        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+
+                                    <input class="currency-input-center" name="name">
+
+                                    <select class="currency-input-right" name="target_currency" onChange="frExCalc();">
+                                    </select>
+                                </div>
+                                <p class="currency-timestamp-text">Calculation Timestamp:<span
+                                        id="currentTimestamp"></span></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <h2>Udayanga Jayamuthu Amarasena</h2>
+                <table class="contactTable" style="text-align: initial;" tabindex="0">
+                    
+                    <tbody>
+                        <tr>
+                            <td><img src="img/email_icon.svg" alt="Email Logo" height="20"></td>
+                            <td>udayangajayamuthu@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/linkedIn_icon.svg" alt="LinkedIn Logo" height="20"></td>
+                            <td>/in/udayangaamarasena/</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/github_icon.svg" alt="Github Logo" height="20"></td>
+                            <td>/Udabanga</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var dateTime = new Date();
+        console.log(dateTime);
+        document.getElementById("currentTimestamp").textContent = dateTime;
+
+        (function () {
+            var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true;
+            js.src = 'https://www.floatrates.com/scripts/converter.js';
+            var sjs = document.getElementsByTagName('script')[0]; sjs.parentNode.insertBefore(js, sjs);
+        })();
+    </script>
+
+</body>
+
+</html>
